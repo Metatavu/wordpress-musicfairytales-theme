@@ -21,7 +21,6 @@
                 &copy; <?php echo date('Y'); ?> <?php echo '<a href="'.home_url().'">'.get_bloginfo('name').'</a>'; ?>
                 <span class="sep"> | </span>
                 <a class="credits" href="https://www.metatavu.fi/" target="_blank" title="Metatavu" alt="Musicfairytales Theme">Teeman luonut Metatavu</a>
-
             </div><!-- close .site-info -->
 		</div>
 	</footer><!-- #colophon -->

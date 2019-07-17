@@ -24,6 +24,10 @@ body {
   font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
+.woocommerce-billing-fields .form-row, .woocommerce-shipping-fields .form-row, #order_comments_field {
+	display: block;
+}
+
 header#masthead {
 
   background-color: $bgc-bg-white;
