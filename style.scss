@@ -20,8 +20,11 @@ $header-white: #fff;
 $text-black: #000;
 $text-white: #fff;
 
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Londrina+Solid&display=swap');
+
 body {
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .woocommerce-billing-fields .form-row, .woocommerce-shipping-fields .form-row, #order_comments_field {
@@ -98,10 +101,16 @@ header#masthead {
     display: block;
     text-align: left;
     color: $text-white !important;
+    font-family: 'Londrina Solid', cursive;
   }
 
   h2 {
     font-weight: 800;
+  }
+
+  .header-banner-link-container {
+    text-align: left;
+    margin-top: 5px;
   }
 
   .header_banner_description {
@@ -111,10 +120,109 @@ header#masthead {
   .header_banner_link {
     background-color: $button-orange-light;
     color: $text-white !important;
-    padding: 10px;
-    margin: 0.8em 0;
-    display: block;
-    width: 50%;
+    padding: 10px 90px;
+    margin: 0;
+    display: inline-block;
+    font-family: 'Londrina Solid', cursive;
+  }
+
+}
+
+#front-page-news {
+  background-color: $bgc-brown-light;
+
+  h2 {
+    font-family: 'Londrina Solid', cursive;
+    font-size: 36px;
+    padding-top: 100px;
+    padding-bottom: 20px;
+    text-align: center;
+  } 
+
+  img {
+    max-width: 240px;
+  }
+}
+
+#front-page-short-description {
+  background-color: $bgc-brown-light;
+
+  h2 {
+    font-family: 'Londrina Solid', cursive;
+    font-size: 36px;
+    margin-top: 100px;
+    margin-bottom: 20px;
+  }
+
+  .wp-block-button {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 100px;
+
+    .wp-block-button__link {
+      background-color: $button-orange-dark;
+      color: $text-white;
+      min-width: 300px;
+      text-align: center;
+      font-family: 'Londrina Solid', cursive;
+      text-transform: uppercase;
+      border-radius: 0;
+    }
+  }
+
+
+}
+
+#front-page-best-selling-products {
+
+  h2 {
+    font-family: 'Londrina Solid', cursive;
+    font-size: 36px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  
+  .add_to_cart_button {
+    background-color: $button-orange-dark;
+    color: $text-white;
+    min-width: 300px;
+    text-align: center;
+    font-family: 'Londrina Solid', cursive;
+    text-transform: uppercase;
+    border-radius: 0;
+  }
+
+  .woocommerce {
+
+    h2 {
+      font-size: 20px;
+      min-height: 68px;
+    }
+
+    .products {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 640px;
+
+      .product {
+        max-width: 320px;
+
+        .attachment-woocommerce_thumbnail {
+          max-width: 256px;
+        }
+
+        .added_to_cart {
+          text-align: center;
+          color: $text-black;
+          display: block;
+          font-weight: bold;
+          text-decoration: underline;
+        }
+
+      }
+    
+    }
+  
   }
 
 }

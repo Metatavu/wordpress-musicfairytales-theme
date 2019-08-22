@@ -77,18 +77,63 @@
                       }
                     ?>
                 </p>
-                <a href="<?php echo get_permalink( get_theme_mod( 'banner_calltoaction_link' ) ) ?>" class="header_banner_link">
-                  <?php
-                    if(get_theme_mod( 'banner_link_text' )){
-                        echo get_theme_mod( 'banner_link_text' );
-                    }else{
-                        echo esc_html__('Aseta linkin teksti Ulkoasu -> Mukauta -> Banner call to action');
-                    }
-                    ?>
-                </a>
+                <div class="header-banner-link-container">
+                    <a href="<?php echo get_permalink( get_theme_mod( 'banner_calltoaction_link' ) ) ?>" class="header_banner_link">
+                    <?php
+                        if(get_theme_mod( 'banner_link_text' )){
+                            echo get_theme_mod( 'banner_link_text' );
+                        }else{
+                            echo esc_html__('Aseta linkin teksti Ulkoasu -> Mukauta -> Banner call to action');
+                        }
+                        ?>
+                    </a>
+                </div>
             </div>
         </div>
     <?php endif; ?>
+
+    <?php if (is_front_page()) { ?>
+      <?php $shortDescriptionPage = get_post(get_theme_mod('frontpage_short_description_page')); ?>
+
+      <div id="front-page-short-description">
+        <div class="container"> 
+          <div class="row"> 
+            <div class="col text-center">
+              <h2><?php echo $shortDescriptionPage->post_title?></h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg">  
+              <?php echo apply_filters( 'the_content', $shortDescriptionPage->post_content ); ?>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <?php } endif; ?>
+
+    <?php if (is_front_page()) { ?>
+      <div id="front-page-best-selling-products" class="mt-2">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <h2 class="text-center">Suositut musiikkisadut verkkokaupassa
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm justify-content-sm-center">
+              <?php echo do_shortcode("[products best_selling=true limit=2 columns=2 orderby=popularity]"); ?>
+            </div>
+          </div>
+        </div>
+      </div>
+    <?php } endif; ?>
+
+    <?php if (is_front_page()) { ?>
+      <div id="front-page-news">
+        <h2> Ajankohtaista </h2>
+    <?php } endif; ?>
+
 	<div id="content" class="site-content">
 		<div class="container">
 			<div class="row">

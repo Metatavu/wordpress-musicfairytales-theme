@@ -10,88 +10,136 @@
   License URI:  https://www.gnu.org/licenses/agpl-3.0.en.html
   Text Domain:  musicfairytales
 */
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Londrina+Solid&display=swap");
 body {
-  font-family: "Comic Sans MS", cursive, sans-serif;
-}
+  font-family: 'Source Sans Pro', sans-serif; }
 
 .woocommerce-billing-fields .form-row, .woocommerce-shipping-fields .form-row, #order_comments_field {
-  display: block;
-}
+  display: block; }
 
 header#masthead {
-  background-color: #fff;
-}
-header#masthead .container {
-  max-width: 80%;
-}
-header#masthead .container nav ul {
-  min-width: 40%;
-  justify-content: space-between;
-}
-header#masthead .container nav a {
-  color: #000 !important;
-  font-size: 1.2em !important;
-}
-header#masthead .container nav .cart-customlocation {
-  background-color: #000;
-  width: 30px;
-  height: 30px;
-  border-radius: 15px;
-  text-align: center;
-  color: #fff !important;
-}
-header#masthead .container nav .hide-mobile {
-  display: flex;
-}
-@media (max-width: 1200px) {
-  header#masthead .container nav .hide-mobile {
-    display: none;
-  }
-}
-@media (max-width: 1200px) {
+  background-color: #fff; }
   header#masthead .container {
-    max-width: 100%;
-  }
-}
+    max-width: 80%; }
+    header#masthead .container nav ul {
+      min-width: 40%;
+      justify-content: space-between; }
+    header#masthead .container nav a {
+      color: #000 !important;
+      font-size: 1.2em !important; }
+    header#masthead .container nav .cart-customlocation {
+      background-color: #000;
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+      text-align: center;
+      color: #fff !important; }
+    header#masthead .container nav .hide-mobile {
+      display: flex; }
+      @media (max-width: 1200px) {
+        header#masthead .container nav .hide-mobile {
+          display: none; } }
+    @media (max-width: 1200px) {
+      header#masthead .container {
+        max-width: 100%; } }
 
 #page-sub-header {
-  height: 800px;
-}
-#page-sub-header .container {
-  margin: 0;
-  margin-top: 5%;
-  margin-left: 20%;
-  background-color: rgba(52, 102, 189, 0.4);
-  width: 25%;
-  padding: 1.5em;
-}
-@media (max-width: 1200px) {
+  height: 800px; }
   #page-sub-header .container {
-    width: 80%;
-    margin: auto;
-  }
-}
-#page-sub-header h2,
-#page-sub-header p {
-  margin: 0;
-  padding: 0;
-  display: block;
-  text-align: left;
-  color: #fff !important;
-}
-#page-sub-header h2 {
-  font-weight: 800;
-}
-#page-sub-header .header_banner_description {
-  padding: 1em 0em;
-}
-#page-sub-header .header_banner_link {
-  background-color: #eeab28;
-  color: #fff !important;
-  padding: 10px;
-  margin: 0.8em 0;
-  display: block;
-  width: 50%;
-}
+    margin: 0;
+    margin-top: 5%;
+    margin-left: 20%;
+    background-color: rgba(52, 102, 189, 0.4);
+    width: 25%;
+    padding: 1.5em; }
+    @media (max-width: 1200px) {
+      #page-sub-header .container {
+        width: 80%;
+        margin: auto; } }
+  #page-sub-header h2,
+  #page-sub-header p {
+    margin: 0;
+    padding: 0;
+    display: block;
+    text-align: left;
+    color: #fff !important;
+    font-family: 'Londrina Solid', cursive; }
+  #page-sub-header h2 {
+    font-weight: 800; }
+  #page-sub-header .header-banner-link-container {
+    text-align: left;
+    margin-top: 5px; }
+  #page-sub-header .header_banner_description {
+    padding: 1em 0em; }
+  #page-sub-header .header_banner_link {
+    background-color: #eeab28;
+    color: #fff !important;
+    padding: 10px 90px;
+    margin: 0;
+    display: inline-block;
+    font-family: 'Londrina Solid', cursive; }
+
+#front-page-news {
+  background-color: #f6efe5; }
+  #front-page-news h2 {
+    font-family: 'Londrina Solid', cursive;
+    font-size: 36px;
+    padding-top: 100px;
+    padding-bottom: 20px;
+    text-align: center; }
+  #front-page-news img {
+    max-width: 240px; }
+
+#front-page-short-description {
+  background-color: #f6efe5; }
+  #front-page-short-description h2 {
+    font-family: 'Londrina Solid', cursive;
+    font-size: 36px;
+    margin-top: 100px;
+    margin-bottom: 20px; }
+  #front-page-short-description .wp-block-button {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 100px; }
+    #front-page-short-description .wp-block-button .wp-block-button__link {
+      background-color: #e74c09;
+      color: #fff;
+      min-width: 300px;
+      text-align: center;
+      font-family: 'Londrina Solid', cursive;
+      text-transform: uppercase;
+      border-radius: 0; }
+
+#front-page-best-selling-products h2 {
+  font-family: 'Londrina Solid', cursive;
+  font-size: 36px;
+  margin-top: 100px;
+  margin-bottom: 100px; }
+#front-page-best-selling-products .add_to_cart_button {
+  background-color: #e74c09;
+  color: #fff;
+  min-width: 300px;
+  text-align: center;
+  font-family: 'Londrina Solid', cursive;
+  text-transform: uppercase;
+  border-radius: 0; }
+#front-page-best-selling-products .woocommerce h2 {
+  font-size: 20px;
+  min-height: 68px; }
+#front-page-best-selling-products .woocommerce .products {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 640px; }
+  #front-page-best-selling-products .woocommerce .products .product {
+    max-width: 320px; }
+    #front-page-best-selling-products .woocommerce .products .product .attachment-woocommerce_thumbnail {
+      max-width: 256px; }
+    #front-page-best-selling-products .woocommerce .products .product .added_to_cart {
+      text-align: center;
+      color: #000;
+      display: block;
+      font-weight: bold;
+      text-decoration: underline; }
 
 /*# sourceMappingURL=style.css.map */

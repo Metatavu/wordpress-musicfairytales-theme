@@ -10,6 +10,10 @@
  */
 
 ?>
+<?php if (is_front_page()) { ?>
+  </div>
+<?php } endif; ?>
+		
 <?php if(!is_page_template( 'blank-page.php' ) && !is_page_template( 'blank-page-with-container.php' )): ?>
 			</div><!-- .row -->
 		</div><!-- .container -->
