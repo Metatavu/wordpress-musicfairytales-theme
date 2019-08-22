@@ -81,15 +81,23 @@ header#masthead {
     font-family: 'Londrina Solid', cursive; }
 
 #front-page-news {
-  background-color: #f6efe5; }
+  background-color: #fcfbf7; }
   #front-page-news h2 {
     font-family: 'Londrina Solid', cursive;
     font-size: 36px;
     padding-top: 100px;
     padding-bottom: 20px;
     text-align: center; }
+  #front-page-news h3 {
+    font-family: 'Londrina Solid', cursive;
+    font-size: 30px; }
   #front-page-news img {
-    max-width: 240px; }
+    max-width: 100%; }
+  #front-page-news .more-link {
+    text-transform: uppercase;
+    color: #e74c09;
+    font-weight: bold;
+    font-size: 13px; }
 
 #front-page-short-description {
   background-color: #f6efe5; }

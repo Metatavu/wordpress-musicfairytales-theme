@@ -15,6 +15,7 @@ $button-orange-light: #eeab28;
 $button-orange-dark: #e74c09;
 $button-text-white: #fff;
 $bgc-brown-light: #f6efe5;
+$brown-extra-light: #fcfbf7;
 $bgc-bg-white: #fff;
 $header-white: #fff;
 $text-black: #000;
@@ -129,7 +130,7 @@ header#masthead {
 }
 
 #front-page-news {
-  background-color: $bgc-brown-light;
+  background-color: $brown-extra-light;
 
   h2 {
     font-family: 'Londrina Solid', cursive;
@@ -139,9 +140,22 @@ header#masthead {
     text-align: center;
   } 
 
-  img {
-    max-width: 240px;
+  h3 {
+    font-family: 'Londrina Solid', cursive;
+    font-size: 30px;
   }
+
+  img {
+    max-width: 100%;
+  }
+  
+  .more-link {
+    text-transform: uppercase;
+    color: $button-orange-dark;
+    font-weight: bold;
+    font-size: 13px;
+  }
+
 }
 
 #front-page-short-description {
