@@ -24,5 +24,8 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 	return $fragments;
 }
 
+add_action( 'init', function () {
+	register_nav_menu('footer-menu',__( 'Footer Menu' ));
+});
 
 ?>

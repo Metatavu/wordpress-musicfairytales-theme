@@ -20,6 +20,7 @@ $bgc-bg-white: #fff;
 $header-white: #fff;
 $text-black: #000;
 $text-white: #fff;
+$gray: #1d1d1d;
 
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Londrina+Solid&display=swap');
@@ -257,6 +258,30 @@ header#masthead {
       color: $text-white;
       padding-top: 85px;
     }
+  }
+
+}
+
+#footer-menu {
+
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  .menu {
+
+    text-align: center;
+
+    li {
+      list-style: none;
+      display: inline-block;
+      margin-left: 20px;
+      margin-right: 20px;
+
+      a {
+        color: $gray;
+      }
+    }
+
   }
 
 }
