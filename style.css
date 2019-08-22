@@ -150,4 +150,18 @@ header#masthead {
       font-weight: bold;
       text-decoration: underline; }
 
+#frontline_pages {
+  background-color: #f6efe5;
+  padding-top: 50px;
+  padding-bottom: 50px; }
+  #frontline_pages .front-line-page {
+    background-size: cover;
+    min-height: 200px; }
+    #frontline_pages .front-line-page h3 {
+      font-family: 'Londrina Solid', cursive;
+      font-size: 40px;
+      text-align: center;
+      color: #fff;
+      padding-top: 85px; }
+
 /*# sourceMappingURL=style.css.map */

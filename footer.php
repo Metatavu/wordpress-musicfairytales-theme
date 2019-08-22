@@ -17,8 +17,31 @@
 <?php if(!is_page_template( 'blank-page.php' ) && !is_page_template( 'blank-page-with-container.php' )): ?>
 			</div><!-- .row -->
 		</div><!-- .container -->
-	</div><!-- #content -->
-    <?php get_template_part( 'footer-widget' ); ?>
+  </div><!-- #content -->
+  
+  <?php if (is_front_page()) { ?>
+    <?php $frontlinePage1 = get_post(get_theme_mod('frontline_page_1')); ?>
+    <?php $frontlinePage2 = get_post(get_theme_mod('frontline_page_2')); ?>
+
+    <div id="frontline_pages">
+      <div class="container"> 
+        <div class="row"> 
+          <div class="col">
+            <div class="front-line-page" style="background-image: url('<?php echo get_the_post_thumbnail_url($frontlinePage1) ?>')">
+              <h3><?php echo $frontlinePage1->post_title?></h3>
+            </div>  
+        </div>  
+          <div class="col">
+            <div class="front-line-page" style="background-image: url('<?php echo get_the_post_thumbnail_url($frontlinePage2) ?>')">
+              <h3><?php echo $frontlinePage2->post_title?></h3>
+            </div>  
+        </div>  
+      </div>
+    </div>
+  </div>
+  <?php } endif; ?>
+
+  <?php get_template_part( 'footer-widget' ); ?>
 	<footer id="colophon" class="site-footer <?php echo wp_bootstrap_starter_bg_class(); ?>" role="contentinfo">
 		<div class="container pt-3 pb-3">
             <div class="site-info">

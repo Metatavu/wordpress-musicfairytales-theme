@@ -5,8 +5,8 @@ add_action('customize_register', function ($wp_customize) {
     'title' => 'Banner call to action'
   ));
 
-  $wp_customize->add_section('frontpage_short_description', array(
-    'title' => 'Etusivun lyhyt kuvaus'
+  $wp_customize->add_section('frontpage_contents', array(
+    'title' => 'Etusivun sisällöt'
   ));
 
   $wp_customize->add_setting('banner_title');
@@ -45,8 +45,24 @@ add_action('customize_register', function ($wp_customize) {
   $wp_customize->add_setting( 'frontpage_short_description_page', []);
   $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'frontpage_short_description_page', [
     'label' => "Sivu etusivun lyhyelle kuvaukselle",
-    'section' => 'frontpage_short_description',
+    'section' => 'frontpage_contents',
     'settings' => 'frontpage_short_description_page',
+    'type' => 'dropdown-pages'
+  ]));
+
+  $wp_customize->add_setting( 'frontline_page_1', []);
+  $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'frontline_page_1', [
+    'label' => "Sivu etusivun nostosivu 1",
+    'section' => 'frontpage_contents',
+    'settings' => 'frontline_page_1',
+    'type' => 'dropdown-pages'
+  ]));
+
+  $wp_customize->add_setting( 'frontline_page_2', []);
+  $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'frontline_page_2', [
+    'label' => "Sivu etusivun nostosivu 2",
+    'section' => 'frontpage_contents',
+    'settings' => 'frontline_page_2',
     'type' => 'dropdown-pages'
   ]));
 });
