@@ -65,4 +65,12 @@ add_action('customize_register', function ($wp_customize) {
     'settings' => 'frontline_page_2',
     'type' => 'dropdown-pages'
   ]));
+
+  $wp_customize->add_setting( 'some_page', []);
+  $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'some_page', [
+    'label' => "Some sivu",
+    'section' => 'frontpage_contents',
+    'settings' => 'some_page',
+    'type' => 'dropdown-pages'
+  ]));
 });
