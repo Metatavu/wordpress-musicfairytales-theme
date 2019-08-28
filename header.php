@@ -59,37 +59,35 @@
         </div>
 	</header><!-- #masthead -->
     <?php if(is_front_page() && !get_theme_mod( 'header_banner_visibility' )): ?>
-        <div id="page-sub-header" <?php if(has_header_image()) { ?>style="background-image: url('<?php header_image(); ?>');" <?php } ?>>
-            <div class="container">
-                <h2 class="header_banner_title">
-                    <?php
-                      if(get_theme_mod( 'banner_title' )){
-                          echo get_theme_mod( 'banner_title' );
-                      }else{
-                          echo esc_html__('To customize the contents of this header banner and other elements of your site, go to Dashboard > Appearance > Customize','wp-bootstrap-starter');
-                      }
-                    ?>
-                </h2>
-                <p class="header_banner_description">
-                    <?php
-                      if(get_theme_mod( 'banner_description' )){
-                          echo get_theme_mod( 'banner_description' );
-                      }
-                    ?>
-                </p>
-                <div class="header-banner-link-container">
-                    <a href="<?php echo get_permalink( get_theme_mod( 'banner_calltoaction_link' ) ) ?>" class="header_banner_link">
-                    <?php
-                        if(get_theme_mod( 'banner_link_text' )){
-                            echo get_theme_mod( 'banner_link_text' );
-                        }else{
-                            echo esc_html__('Aseta linkin teksti Ulkoasu -> Mukauta -> Banner call to action');
-                        }
-                        ?>
-                    </a>
+      <div id="header-banner-carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <?php $activePage = true; ?>
+
+          <?php for ($i = 1; $i <= 5; $i++) { ?>
+            <?php $carouselPageId = get_theme_mod("frontpage_carousel_page_$i"); ?>
+            <?php $carouselPage = $carouselPageId ? get_post($carouselPageId) : null; ?>
+            <?php if ($carouselPage) { ?>
+              <div class="carousel-item<?php echo $activePage ? ' active' : ''?>">
+                <div class="header-banner-carousel-image" <?php if(has_header_image()) { ?>style="background-image: url('<?php echo get_the_post_thumbnail_url($carouselPage) ?>');" <?php } ?>>
+                  <div class="header-banner-carousel-image-texts">
+                    <h2><?php echo $carouselPage->post_title?></h2>
+                    <p><?php echo $carouselPage->post_content?></p>
+                  </div>
                 </div>
-            </div>
+              </div>
+              <?php $activePage = false; ?>
+            <?php  } ?>
+          <?php  } ?>
         </div>
+        <a class="carousel-control-prev" href="#header-banner-carousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#header-banner-carousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
     <?php endif; ?>
 
     <?php if (is_front_page()) { ?>

@@ -44,41 +44,43 @@ header#masthead {
       header#masthead .container {
         max-width: 100%; } }
 
-#page-sub-header {
-  height: 800px; }
-  #page-sub-header .container {
-    margin: 0;
-    margin-top: 5%;
+.header-banner-carousel-image {
+  background-size: 100%;
+  padding-top: 5%; }
+  .header-banner-carousel-image .header-banner-carousel-image-texts {
     margin-left: 20%;
-    background-color: rgba(52, 102, 189, 0.4);
     width: 25%;
+    background-color: rgba(52, 102, 189, 0.4);
     padding: 1.5em; }
-    @media (max-width: 1200px) {
-      #page-sub-header .container {
-        width: 80%;
-        margin: auto; } }
-  #page-sub-header h2,
-  #page-sub-header p {
-    margin: 0;
-    padding: 0;
-    display: block;
-    text-align: left;
-    color: #fff !important;
-    font-family: 'Londrina Solid', cursive; }
-  #page-sub-header h2 {
-    font-weight: 800; }
-  #page-sub-header .header-banner-link-container {
-    text-align: left;
-    margin-top: 5px; }
-  #page-sub-header .header_banner_description {
-    padding: 1em 0em; }
-  #page-sub-header .header_banner_link {
-    background-color: #eeab28;
-    color: #fff !important;
-    padding: 10px 90px;
-    margin: 0;
-    display: inline-block;
-    font-family: 'Londrina Solid', cursive; }
+    .header-banner-carousel-image .header-banner-carousel-image-texts h2,
+    .header-banner-carousel-image .header-banner-carousel-image-texts p {
+      margin: 0;
+      padding: 0;
+      display: block;
+      text-align: left;
+      color: #fff !important;
+      font-family: 'Londrina Solid', cursive; }
+    .header-banner-carousel-image .header-banner-carousel-image-texts p {
+      font-size: 1.25rem; }
+    .header-banner-carousel-image .header-banner-carousel-image-texts h2 {
+      font-weight: 800;
+      margin-bottom: 20px; }
+    .header-banner-carousel-image .header-banner-carousel-image-texts .wp-block-button a, .header-banner-carousel-image .header-banner-carousel-image-texts a {
+      background-color: #eeab28;
+      color: #fff;
+      padding: 10px 90px;
+      display: inline-block;
+      font-family: 'Londrina Solid', cursive;
+      border-radius: 0;
+      font-size: 16px;
+      margin-top: 20px; }
+
+#header-banner-carousel {
+  max-height: 800px;
+  background-size: contain; }
+
+.header-banner-carousel-image {
+  height: 800px; }
 
 #front-page-news {
   background-color: #fcfbf7; }
