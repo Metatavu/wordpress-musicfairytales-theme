@@ -27,12 +27,12 @@
       <div class="container"> 
         <div class="row"> 
           <div class="col">
-            <div class="front-line-page" style="background-image: url('<?php echo get_the_post_thumbnail_url($frontlinePage1) ?>')">
+            <div class="front-line-page mb-3 mb-lg-0" style="background-image: url('<?php echo get_the_post_thumbnail_url($frontlinePage1) ?>')">
               <h3><?php echo $frontlinePage1->post_title?></h3>
             </div>  
         </div>  
           <div class="col">
-            <div class="front-line-page" style="background-image: url('<?php echo get_the_post_thumbnail_url($frontlinePage2) ?>')">
+            <div class="front-line-page mb-3 mb-lg-0" style="background-image: url('<?php echo get_the_post_thumbnail_url($frontlinePage2) ?>')">
               <h3><?php echo $frontlinePage2->post_title?></h3>
             </div>  
         </div>  

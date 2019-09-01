@@ -12,146 +12,158 @@
 */
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Londrina+Solid&display=swap");
+/* Utils */
+@media (min-width: 992px) {
+  .hidden-lg-up {
+    display: none !important; } }
+@media (max-width: 992px) {
+  .hidden-lg-down {
+    display: none !important; } }
+/* Common */
 body {
   font-family: 'Source Sans Pro', sans-serif; }
 
+/* Woo commerce billing */
 .woocommerce-billing-fields .form-row, .woocommerce-shipping-fields .form-row, #order_comments_field {
   display: block; }
 
+/* Menu */
 header#masthead {
   background-color: #fff; }
-  header#masthead .container {
-    max-width: 80%; }
-    header#masthead .container nav ul {
-      min-width: 40%;
-      justify-content: space-between; }
-    header#masthead .container nav a {
-      color: #000 !important;
-      font-size: 1.2em !important; }
-    header#masthead .container nav .cart-customlocation {
-      background-color: #000;
-      width: 30px;
-      height: 30px;
-      border-radius: 15px;
-      text-align: center;
-      color: #fff !important; }
-    header#masthead .container nav .hide-mobile {
-      display: flex; }
-      @media (max-width: 1200px) {
-        header#masthead .container nav .hide-mobile {
-          display: none; } }
-    @media (max-width: 1200px) {
-      header#masthead .container {
-        max-width: 100%; } }
+  header#masthead .cart-link-container {
+    display: inline-block;
+    line-height: 36px;
+    vertical-align: bottom; }
+  header#masthead .cart-customlocation {
+    background-color: #000;
+    text-align: center;
+    color: #fff !important;
+    padding: 8px 10px;
+    font-size: 12px;
+    border-radius: 30px; }
+  header#masthead .cart-icon-container {
+    display: inline-block;
+    line-height: 28px;
+    vertical-align: bottom;
+    padding-top: 8px;
+    margin-right: 5px; }
+  header#masthead .fa-shopping-cart {
+    font-size: 28px; }
+  header#masthead .navbar-toggler {
+    padding-left: 6px; }
+  header#masthead .fa-bars {
+    font-size: 30px;
+    color: #000; }
+  header#masthead #main-nav a.nav-link {
+    color: #000 !important;
+    font-size: 1.2em !important; }
+
+/* Front page carousel */
+.header-banner-carousel-image-texts {
+  background-color: #305390;
+  padding: 50px; }
+  .header-banner-carousel-image-texts h2,
+  .header-banner-carousel-image-texts p {
+    margin: 0;
+    display: block;
+    color: #fff !important;
+    font-family: 'Londrina Solid', cursive; }
+  .header-banner-carousel-image-texts p {
+    font-size: 1.25rem; }
+  .header-banner-carousel-image-texts h2 {
+    font-weight: 800;
+    padding-top: 20px;
+    padding-bottom: 40px; }
+  .header-banner-carousel-image-texts .wp-block-button a, .header-banner-carousel-image-texts a {
+    background-color: #eeab28;
+    color: #fff;
+    min-width: 220px;
+    display: inline-block;
+    font-family: 'Londrina Solid', cursive;
+    border-radius: 0;
+    font-size: 16px;
+    margin-top: 40px; }
 
 .header-banner-carousel-image {
   background-size: 100%;
-  padding-top: 5%; }
+  padding-top: 5%;
+  background-repeat: no-repeat;
+  height: 800px; }
   .header-banner-carousel-image .header-banner-carousel-image-texts {
     margin-left: 20%;
     width: 25%;
     background-color: rgba(52, 102, 189, 0.4);
     padding: 1.5em; }
-    .header-banner-carousel-image .header-banner-carousel-image-texts h2,
-    .header-banner-carousel-image .header-banner-carousel-image-texts p {
-      margin: 0;
-      padding: 0;
-      display: block;
-      text-align: left;
-      color: #fff !important;
-      font-family: 'Londrina Solid', cursive; }
-    .header-banner-carousel-image .header-banner-carousel-image-texts p {
-      font-size: 1.25rem; }
     .header-banner-carousel-image .header-banner-carousel-image-texts h2 {
-      font-weight: 800;
-      margin-bottom: 20px; }
+      padding-bottom: 20px; }
     .header-banner-carousel-image .header-banner-carousel-image-texts .wp-block-button a, .header-banner-carousel-image .header-banner-carousel-image-texts a {
-      background-color: #eeab28;
-      color: #fff;
-      padding: 10px 90px;
-      display: inline-block;
-      font-family: 'Londrina Solid', cursive;
-      border-radius: 0;
-      font-size: 16px;
       margin-top: 20px; }
 
 #header-banner-carousel {
   max-height: 800px;
   background-size: contain; }
 
-.header-banner-carousel-image {
-  height: 800px; }
+@media (max-width: 992px) {
+  .header-banner-carousel-image {
+    height: 250px; } }
+/* Front page products */
+#front-page-best-selling-products h2 {
+  font-family: 'Londrina Solid', cursive;
+  font-size: 24px; }
+#front-page-best-selling-products .product {
+  width: 100%;
+  padding: 10px 50px; }
+  #front-page-best-selling-products .product h2 {
+    font-size: 20px; }
+#front-page-best-selling-products .price {
+  color: #000;
+  font-size: 22px;
+  font-weight: 900; }
+#front-page-best-selling-products .add_to_cart_button {
+  background-color: #e74c09;
+  color: #fff;
+  min-width: 200px;
+  text-align: center;
+  font-family: 'Londrina Solid', cursive;
+  text-transform: uppercase;
+  border-radius: 0;
+  padding: 18px 20px;
+  font-size: 15px; }
+#front-page-best-selling-products .added_to_cart {
+  color: #000;
+  display: block;
+  font-weight: bold;
+  text-decoration: underline; }
 
-#front-page-news {
+@media (min-width: 992px) {
+  #front-page-best-selling-products .products {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 640px; }
+    #front-page-best-selling-products .products .product {
+      max-width: 320px;
+      padding: 0;
+      margin: 0; }
+      #front-page-best-selling-products .products .product h2 {
+        max-width: 256px; }
+      #front-page-best-selling-products .products .product .price {
+        font-size: 16px; }
+      #front-page-best-selling-products .products .product .attachment-woocommerce_thumbnail {
+        max-width: 256px; } }
+/* Frontpage news */
+.front-page-news {
   background-color: #fcfbf7; }
-  #front-page-news h2 {
+  .front-page-news h2,
+  .front-page-news h3 {
     font-family: 'Londrina Solid', cursive;
-    font-size: 36px;
-    padding-top: 100px;
-    padding-bottom: 20px;
-    text-align: center; }
-  #front-page-news h3 {
-    font-family: 'Londrina Solid', cursive;
-    font-size: 30px; }
-  #front-page-news img {
-    max-width: 100%; }
-  #front-page-news .more-link {
+    font-size: 24px; }
+  .front-page-news .more-link {
     text-transform: uppercase;
     color: #e74c09;
     font-weight: bold;
     font-size: 13px; }
 
-#front-page-short-description {
-  background-color: #f6efe5; }
-  #front-page-short-description h2 {
-    font-family: 'Londrina Solid', cursive;
-    font-size: 36px;
-    margin-top: 100px;
-    margin-bottom: 20px; }
-  #front-page-short-description .wp-block-button {
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom: 100px; }
-    #front-page-short-description .wp-block-button .wp-block-button__link {
-      background-color: #e74c09;
-      color: #fff;
-      min-width: 300px;
-      text-align: center;
-      font-family: 'Londrina Solid', cursive;
-      text-transform: uppercase;
-      border-radius: 0; }
-
-#front-page-best-selling-products h2 {
-  font-family: 'Londrina Solid', cursive;
-  font-size: 36px;
-  margin-top: 100px;
-  margin-bottom: 100px; }
-#front-page-best-selling-products .add_to_cart_button {
-  background-color: #e74c09;
-  color: #fff;
-  min-width: 300px;
-  text-align: center;
-  font-family: 'Londrina Solid', cursive;
-  text-transform: uppercase;
-  border-radius: 0; }
-#front-page-best-selling-products .woocommerce h2 {
-  font-size: 20px;
-  min-height: 68px; }
-#front-page-best-selling-products .woocommerce .products {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 640px; }
-  #front-page-best-selling-products .woocommerce .products .product {
-    max-width: 320px; }
-    #front-page-best-selling-products .woocommerce .products .product .attachment-woocommerce_thumbnail {
-      max-width: 256px; }
-    #front-page-best-selling-products .woocommerce .products .product .added_to_cart {
-      text-align: center;
-      color: #000;
-      display: block;
-      font-weight: bold;
-      text-decoration: underline; }
-
+/* Frontline pages */
 #frontline_pages {
   background-color: #f6efe5;
   padding-top: 50px;
@@ -166,6 +178,7 @@ header#masthead {
       color: #fff;
       padding-top: 85px; }
 
+/* Footer menu */
 #footer-menu {
   margin-top: 50px;
   margin-bottom: 50px; }
@@ -179,6 +192,36 @@ header#masthead {
       #footer-menu .menu li a {
         color: #1d1d1d; }
 
+@media (max-width: 576px) {
+  #footer-menu ul.menu {
+    margin: 0;
+    padding: 0; }
+    #footer-menu ul.menu li {
+      display: block;
+      margin: 20px; } }
+/* Frontpage short description */
+#front-page-short-description {
+  background-color: #f6efe5; }
+  #front-page-short-description h2 {
+    font-family: 'Londrina Solid', cursive;
+    font-size: 28px;
+    margin-bottom: 20px; }
+  #front-page-short-description p {
+    font-size: 14px; }
+  #front-page-short-description .wp-block-button {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 100px; }
+    #front-page-short-description .wp-block-button .wp-block-button__link {
+      background-color: #e74c09;
+      color: #fff;
+      min-width: 250px;
+      text-align: center;
+      font-family: 'Londrina Solid', cursive;
+      text-transform: uppercase;
+      border-radius: 0; }
+
+/* Some pages */
 #some_pages {
   margin-top: 50px;
   margin-bottom: 50px; }

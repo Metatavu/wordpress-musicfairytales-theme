@@ -9,7 +9,9 @@
  * @package WP_Bootstrap_Starter
  */
 
-?><!DOCTYPE html>
+?>
+
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -25,25 +27,31 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'wp-bootstrap-starter' ); ?></a>
     <?php if(!is_page_template( 'blank-page.php' ) && !is_page_template( 'blank-page-with-container.php' )): ?>
 	<header id="masthead" class="site-header navbar-static-top <?php echo wp_bootstrap_starter_bg_class(); ?>" role="banner">
-        <div class="container">
-            <nav class="navbar navbar-expand-xl p-0">
-                <div class="navbar-brand">
-                    <?php if ( get_theme_mod( 'wp_bootstrap_starter_logo' ) ): ?>
-                        <a href="<?php echo esc_url( home_url( '/' )); ?>">
-                            <img src="<?php echo esc_attr(get_theme_mod( 'wp_bootstrap_starter_logo' )); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
-                        </a>
-                    <?php else : ?>
-                      <a class="site-title" href="<?php echo esc_url( home_url( '/' )); ?>"><div class="mft_logo"></div> <?php esc_url(bloginfo('name')); ?></a>
-                    <?php endif; ?>
+    <div class="container">
+      <div class="row">
+        <div class="col col-12 col-lg-2 order-last order-lg-first">
+          <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+              <div class="mt-1 mb-1">
+                <a href="<?php echo esc_url( home_url( '/' )); ?>">
+                  <img src="<?php echo esc_attr(get_theme_mod( 'wp_bootstrap_starter_logo' )); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+                </a>
+              </div>
+            </div>
+            <div class="col-3"></div>
+          </div>
+        </div>
+        <div class="col pl-0">
+          <nav class="navbar navbar-expand-lg p-0">
 
-                </div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
 
-                <?php
-                wp_nav_menu(array(
-                'theme_location'    => 'primary',
+            <?php
+              wp_nav_menu([
+                'theme_location'  => 'primary',
                 'container'       => 'div',
                 'container_id'    => 'main-nav',
                 'container_class' => 'collapse navbar-collapse justify-content-center',
@@ -52,11 +60,21 @@
                 'depth'           => 3,
                 'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
                 'walker'          => new wp_bootstrap_navwalker()
-                ));
-                ?>
-              <div class="hide-mobile"><i class="fas fa-shopping-cart" style="font-size:30px; margin-right:5px;"></i><a class="cart-customlocation" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'Katso ostoskoria' ); ?>"><?php echo sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></a><div>
-            </nav>
+              ]);
+            ?>
+          </nav>
         </div>
+        <div class="col text-right pr-0">
+          <div class="cart-icon-container">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <div class="cart-link-container">
+            <a class="cart-customlocation" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'Katso ostoskoria' ); ?>"><?php echo sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
 	</header><!-- #masthead -->
     <?php if(is_front_page() && !get_theme_mod( 'header_banner_visibility' )): ?>
       <div id="header-banner-carousel" class="carousel slide" data-ride="carousel">
@@ -69,10 +87,14 @@
             <?php if ($carouselPage) { ?>
               <div class="carousel-item<?php echo $activePage ? ' active' : ''?>">
                 <div class="header-banner-carousel-image" <?php if(has_header_image()) { ?>style="background-image: url('<?php echo get_the_post_thumbnail_url($carouselPage) ?>');" <?php } ?>>
-                  <div class="header-banner-carousel-image-texts">
+                  <div class="header-banner-carousel-image-texts text-left hidden-lg-down">
                     <h2><?php echo $carouselPage->post_title?></h2>
                     <p><?php echo $carouselPage->post_content?></p>
                   </div>
+                </div>
+                <div class="header-banner-carousel-image-texts text-center hidden-lg-up">
+                  <h2><?php echo $carouselPage->post_title?></h2>
+                  <p><?php echo $carouselPage->post_content?></p>
                 </div>
               </div>
               <?php $activePage = false; ?>
@@ -96,8 +118,8 @@
       <div id="front-page-short-description">
         <div class="container"> 
           <div class="row"> 
-            <div class="col text-center">
-              <h2><?php echo $shortDescriptionPage->post_title?></h2>
+            <div class="col text-center pt-4 mt-4">
+              <h2 class="pt-4"><?php echo $shortDescriptionPage->post_title?></h2>
             </div>
           </div>
           <div class="row">
@@ -115,11 +137,11 @@
         <div class="container">
           <div class="row">
             <div class="col-sm">
-              <h2 class="text-center">Suositut musiikkisadut verkkokaupassa
+              <h2 class="text-center mt-4 pt-4">Suositut musiikkisadut verkkokaupassa
             </div>
           </div>
           <div class="row">
-            <div class="col-sm justify-content-sm-center">
+            <div class="col text-center text-lg-left">
               <?php echo do_shortcode("[products best_selling=true limit=2 columns=2 orderby=popularity]"); ?>
             </div>
           </div>
@@ -127,12 +149,14 @@
       </div>
     <?php } endif; ?>
 
-    <?php if (is_front_page()) { ?>
-      <div id="front-page-news">
-        <h2> Ajankohtaista </h2>
-    <?php } endif; ?>
-
-	<div id="content" class="site-content">
-		<div class="container">
-			<div class="row">
-                <?php endif; ?>
+    <div id="content" class="site-content<?php echo is_front_page() ? ' front-page-news' : '' ?>">
+      <div class="container">
+        <?php if (is_front_page()) { ?>
+          <div class="row">
+            <div class="col mt-4 mb-4">
+              <h2 class="mt-4 text-center"> Ajankohtaista </h2>
+            </div>
+          </div>
+        <?php } endif; ?>
+    
+<?php endif; ?>

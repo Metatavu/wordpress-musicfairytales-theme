@@ -11,6 +11,11 @@
   Text Domain:  musicfairytales
 */
 
+$break-sm: 576px;
+$break-md: 768px;
+$break-lg: 992px;
+$break-xl: 1200px;
+
 $button-orange-light: #eeab28;
 $button-orange-dark: #e74c09;
 $button-text-white: #fff;
@@ -18,68 +23,138 @@ $bgc-brown-light: #f6efe5;
 $brown-extra-light: #fcfbf7;
 $bgc-bg-white: #fff;
 $header-white: #fff;
-$text-black: #000;
+$black: #000;
 $text-white: #fff;
 $gray: #1d1d1d;
+$blue: #305390;
 
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Londrina+Solid&display=swap');
+
+/* Utils */
+
+@media (min-width: $break-lg) {
+
+  .hidden-lg-up {
+    display: none !important;
+  }
+
+}
+
+@media (max-width: $break-lg) {
+
+  .hidden-lg-down {
+    display: none !important;
+  }
+
+}
+
+/* Common */
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+/* Woo commerce billing */
+
 .woocommerce-billing-fields .form-row, .woocommerce-shipping-fields .form-row, #order_comments_field {
 	display: block;
 }
 
+/* Menu */
+
 header#masthead {
   background-color: $bgc-bg-white;
 
-  .container {
-    max-width: 80%;
+  .cart-link-container {
+    display: inline-block;
+    line-height: 36px; 
+    vertical-align: bottom;
+  }
+  
+  .cart-customlocation {
+    background-color: #000;
+    text-align: center;
+    color: $text-white !important;
+    padding: 8px 10px;
+    font-size: 12px;
+    border-radius: 30px;
+  }
 
-    nav {
+  .cart-icon-container {
+    display: inline-block;
+    line-height: 28px; 
+    vertical-align: bottom; 
+    padding-top: 8px;
+    margin-right: 5px;
+  }
 
-      ul {
-        min-width: 40%;
-        justify-content: space-between;
-      }
+  .fa-shopping-cart {
+    font-size: 28px;
+  }
 
-      a {
-        color: $text-black !important;
-        font-size: 1.2em !important;
-      }
+  .navbar-toggler {
+    padding-left: 6px;
+  }
 
-      .cart-customlocation {
+  .fa-bars {
+    font-size: 30px;
+    color: $black;
+  }
 
-        background-color: #000;
-        width: 30px;
-        height: 30px;
-        border-radius: 15px;
-        text-align: center;
-        color: $text-white !important;
-
-      }
-
-      .hide-mobile {
-        display: flex;
-        @media (max-width: 1200px) {
-          display: none;
-        }
-      }
-
+  #main-nav {
+    
+    a.nav-link {
+      color: $black !important;
+      font-size: 1.2em !important;
     }
 
-    @media (max-width: 1200px) {
-      max-width: 100%;
-    }
+  }
+  
+}
+
+/* Front page carousel */
+
+.header-banner-carousel-image-texts {
+  
+  background-color: $blue;
+  padding: 50px;
+
+  h2,
+  p {
+    margin: 0;
+    display: block;
+    color: $text-white !important;
+    font-family: 'Londrina Solid', cursive;
+  }
+
+  p {
+    font-size: 1.25rem;
+  }
+
+  h2 {
+    font-weight: 800;
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+
+  .wp-block-button a, a {
+    background-color: $button-orange-light;
+    color: $text-white;
+    min-width: 220px;
+    display: inline-block;
+    font-family: 'Londrina Solid', cursive;
+    border-radius: 0;
+    font-size: 16px;
+    margin-top: 40px;
   }
 }
 
 .header-banner-carousel-image {
   background-size: 100%;
   padding-top: 5%;
+  background-repeat: no-repeat;
+  height: 800px;
 
   .header-banner-carousel-image-texts {
     margin-left: 20%;
@@ -87,38 +162,14 @@ header#masthead {
     background-color: rgba(52, 102, 189, 0.4);
     padding: 1.5em;
 
-    h2,
-    p {
-      margin: 0;
-      padding: 0;
-      display: block;
-      text-align: left;
-      color: $text-white !important;
-      font-family: 'Londrina Solid', cursive;
-    }
-
-    p {
-      // 
-      font-size: 1.25rem;
-    }
-
     h2 {
-      font-weight: 800;
-      margin-bottom: 20px;
+      padding-bottom: 20px;
     }
 
     .wp-block-button a, a {
-      background-color: $button-orange-light;
-      color: $text-white;
-      padding: 10px 90px;
-      display: inline-block;
-      font-family: 'Londrina Solid', cursive;
-      border-radius: 0;
-      font-size: 16px;
       margin-top: 20px;
     }
   }
-
 }
 
 #header-banner-carousel {
@@ -126,93 +177,61 @@ header#masthead {
   background-size: contain;
 }
 
-.header-banner-carousel-image {
-  height: 800px;
-}
+@media (max-width: $break-lg) {
 
-#front-page-news {
-  background-color: $brown-extra-light;
-
-  h2 {
-    font-family: 'Londrina Solid', cursive;
-    font-size: 36px;
-    padding-top: 100px;
-    padding-bottom: 20px;
-    text-align: center;
-  } 
-
-  h3 {
-    font-family: 'Londrina Solid', cursive;
-    font-size: 30px;
-  }
-
-  img {
-    max-width: 100%;
-  }
-  
-  .more-link {
-    text-transform: uppercase;
-    color: $button-orange-dark;
-    font-weight: bold;
-    font-size: 13px;
+  .header-banner-carousel-image {
+    height: 250px;
   }
 
 }
 
-#front-page-short-description {
-  background-color: $bgc-brown-light;
-
-  h2 {
-    font-family: 'Londrina Solid', cursive;
-    font-size: 36px;
-    margin-top: 100px;
-    margin-bottom: 20px;
-  }
-
-  .wp-block-button {
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom: 100px;
-
-    .wp-block-button__link {
-      background-color: $button-orange-dark;
-      color: $text-white;
-      min-width: 300px;
-      text-align: center;
-      font-family: 'Londrina Solid', cursive;
-      text-transform: uppercase;
-      border-radius: 0;
-    }
-  }
-
-
-}
+/* Front page products */
 
 #front-page-best-selling-products {
-
+  
   h2 {
     font-family: 'Londrina Solid', cursive;
-    font-size: 36px;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    font-size: 24px;
+  }
+
+  .product {
+    width: 100%;
+    padding: 10px 50px;
+
+    h2 {
+      font-size: 20px;
+    }
   }
   
+  .price {
+    color: $black;
+    font-size: 22px;
+    font-weight: 900;
+  }
+
   .add_to_cart_button {
     background-color: $button-orange-dark;
     color: $text-white;
-    min-width: 300px;
+    min-width: 200px;
     text-align: center;
     font-family: 'Londrina Solid', cursive;
     text-transform: uppercase;
     border-radius: 0;
+    padding: 18px 20px;
+    font-size: 15px;
   }
 
-  .woocommerce {
+  .added_to_cart {
+    color: $black;
+    display: block;
+    font-weight: bold;
+    text-decoration: underline;
+  }
 
-    h2 {
-      font-size: 20px;
-      min-height: 68px;
-    }
+}
+
+@media (min-width: $break-lg) {
+  #front-page-best-selling-products {
 
     .products {
       margin-left: auto;
@@ -221,26 +240,45 @@ header#masthead {
 
       .product {
         max-width: 320px;
+        padding: 0;
+        margin: 0;
+
+        h2 {
+          max-width: 256px;
+        }
+
+        .price {
+          font-size: 16px;
+        }
 
         .attachment-woocommerce_thumbnail {
           max-width: 256px;
         }
-
-        .added_to_cart {
-          text-align: center;
-          color: $text-black;
-          display: block;
-          font-weight: bold;
-          text-decoration: underline;
-        }
-
-      }
-    
+      }    
     }
-  
+  }
+}
+
+/* Frontpage news */
+
+.front-page-news {
+  background-color: $brown-extra-light;
+
+  h2, 
+  h3 {
+    font-family: 'Londrina Solid', cursive;
+    font-size: 24px;
   }
 
+  .more-link {
+    text-transform: uppercase;
+    color: $button-orange-dark;
+    font-weight: bold;
+    font-size: 13px;
+  }
 }
+
+/* Frontline pages */
 
 #frontline_pages {
   background-color: $bgc-brown-light;
@@ -261,6 +299,8 @@ header#masthead {
   }
 
 }
+
+/* Footer menu */
 
 #footer-menu {
 
@@ -285,6 +325,55 @@ header#masthead {
   }
 
 }
+
+@media (max-width: $break-sm) {
+
+  #footer-menu ul.menu { 
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: block;
+      margin: 20px;
+    }
+  }
+
+}
+
+/* Frontpage short description */
+
+#front-page-short-description {
+  background-color: $bgc-brown-light;
+
+  h2 {
+    font-family: 'Londrina Solid', cursive;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .wp-block-button {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 100px;
+
+    .wp-block-button__link {
+      background-color: $button-orange-dark;
+      color: $text-white;
+      min-width: 250px;
+      text-align: center;
+      font-family: 'Londrina Solid', cursive;
+      text-transform: uppercase;
+      border-radius: 0;
+    }
+  }
+
+}
+
+/* Some pages */
 
 #some_pages {
 
