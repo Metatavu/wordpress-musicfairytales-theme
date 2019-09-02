@@ -12,9 +12,9 @@
 ?>
 <?php if (is_front_page()) { ?>
   </div>
-<?php } endif; ?>
+<?php } ?>
 		
-<?php if(!is_page_template( 'blank-page.php' ) && !is_page_template( 'blank-page-with-container.php' )): ?>
+<?php if(!is_page_template( 'blank-page.php' ) && !is_page_template( 'blank-page-with-container.php' )) { ?>
 			</div><!-- .row -->
 		</div><!-- .container -->
   </div><!-- #content -->
@@ -39,7 +39,7 @@
       </div>
     </div>
   </div>
-  <?php } endif; ?>
+  <?php } ?>
 
   <div id="footer-menu">
     <div class="container"> 
@@ -73,7 +73,7 @@
             </div><!-- close .site-info -->
 		</div>
 	</footer><!-- #colophon -->
-<?php endif; ?>
+<?php } ?>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

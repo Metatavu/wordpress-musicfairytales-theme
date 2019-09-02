@@ -25,7 +25,7 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'wp-bootstrap-starter' ); ?></a>
-    <?php if(!is_page_template( 'blank-page.php' ) && !is_page_template( 'blank-page-with-container.php' )): ?>
+    <?php if(!is_page_template( 'blank-page.php' ) && !is_page_template( 'blank-page-with-container.php' )) { ?>
 	<header id="masthead" class="site-header navbar-static-top <?php echo wp_bootstrap_starter_bg_class(); ?>" role="banner">
     <div class="container">
       <div class="row">
@@ -76,7 +76,7 @@
 
     </div>
 	</header><!-- #masthead -->
-    <?php if(is_front_page() && !get_theme_mod( 'header_banner_visibility' )): ?>
+    <?php if(is_front_page() && !get_theme_mod( 'header_banner_visibility' )) { ?>
       <div id="header-banner-carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <?php $activePage = true; ?>
@@ -110,7 +110,7 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-    <?php endif; ?>
+    <?php } ?>
 
     <?php if (is_front_page()) { ?>
       <?php $shortDescriptionPage = get_post(get_theme_mod('frontpage_short_description_page')); ?>
@@ -130,7 +130,7 @@
         </div>
       </div>
     </div>
-    <?php } endif; ?>
+    <?php }?>
 
     <?php if (is_front_page()) { ?>
       <div id="front-page-best-selling-products" class="mt-2">
@@ -147,7 +147,7 @@
           </div>
         </div>
       </div>
-    <?php } endif; ?>
+    <?php } ?>
 
     <div id="content" class="site-content<?php echo is_front_page() ? ' front-page-news' : '' ?>">
       <div class="container">
@@ -157,6 +157,6 @@
               <h2 class="mt-4 text-center"> Ajankohtaista </h2>
             </div>
           </div>
-        <?php } endif; ?>
+        <?php } ?>
     
-<?php endif; ?>
+<?php } ?>
