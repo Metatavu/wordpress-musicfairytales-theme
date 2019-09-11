@@ -23,7 +23,7 @@
     <?php $frontlinePage1 = get_post(get_theme_mod('frontline_page_1')); ?>
     <?php $frontlinePage2 = get_post(get_theme_mod('frontline_page_2')); ?>
 
-    <div id="frontline_pages">
+    <div id="frontline_pages" style="display: none">
       <div class="container"> 
         <div class="row"> 
           <div class="col">
