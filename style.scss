@@ -5,7 +5,7 @@
   Author:       Metatavu Oy
   Author URI:   https://metatavu.fi
   Template:     wp-bootstrap-starter
-  Version:      1.0.1
+  Version:      1.0.2
   License:      GNU Affero General Public License v3
   License URI:  https://www.gnu.org/licenses/agpl-3.0.en.html
   Text Domain:  musicfairytales
@@ -340,16 +340,24 @@ header#masthead {
   padding-top: 50px;
   padding-bottom: 50px;
 
+  .front-line-page-link {
+    text-decoration: none;
+  }
+
   .front-line-page {
     background-size: cover;
     min-height: 200px;
-
     h3 {
       font-family: 'Londrina Solid', cursive;
       font-size: 40px;
       text-align: center;
       color: $text-white;
       padding-top: 85px;
+
+      a {
+        text-decoration: none;
+        color: $text-white;
+      }
     }
   }
 

@@ -23,22 +23,26 @@
     <?php $frontlinePage1 = get_post(get_theme_mod('frontline_page_1')); ?>
     <?php $frontlinePage2 = get_post(get_theme_mod('frontline_page_2')); ?>
 
-    <div id="frontline_pages" style="display: none">
+    <div id="frontline_pages">
       <div class="container"> 
         <div class="row"> 
           <div class="col">
-            <div class="front-line-page mb-3 mb-lg-0" style="background-image: url('<?php echo get_the_post_thumbnail_url($frontlinePage1) ?>')">
-              <h3><?php echo $frontlinePage1->post_title?></h3>
-            </div>  
-        </div>  
+            <a class="front-line-page-link" href="<?php echo get_permalink($frontlinePage1)?>">
+              <div class="front-line-page mb-3 mb-lg-0" style="background-image: url('<?php echo get_the_post_thumbnail_url($frontlinePage1) ?>')">
+                <h3><?php echo $frontlinePage2->post_title?></h3>
+              </div>
+            </a>
+          </div>  
           <div class="col">
-            <div class="front-line-page mb-3 mb-lg-0" style="background-image: url('<?php echo get_the_post_thumbnail_url($frontlinePage2) ?>')">
-              <h3><?php echo $frontlinePage2->post_title?></h3>
-            </div>  
-        </div>  
+            <a class="front-line-page-link" href="<?php echo get_permalink($frontlinePage2)?>">
+              <div class="front-line-page mb-3 mb-lg-0" style="background-image: url('<?php echo get_the_post_thumbnail_url($frontlinePage2) ?>')">
+                <h3><?php echo $frontlinePage2->post_title?></h3>
+              </div>
+            </a>
+          </div>  
+        </div>
       </div>
     </div>
-  </div>
   <?php } ?>
 
   <div id="footer-menu">
