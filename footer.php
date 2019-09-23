@@ -29,7 +29,7 @@
           <div class="col">
             <a class="front-line-page-link" href="<?php echo get_permalink($frontlinePage1)?>">
               <div class="front-line-page mb-3 mb-lg-0" style="background-image: url('<?php echo get_the_post_thumbnail_url($frontlinePage1) ?>')">
-                <h3><?php echo $frontlinePage2->post_title?></h3>
+                <h3><?php echo $frontlinePage1->post_title?></h3>
               </div>
             </a>
           </div>  
