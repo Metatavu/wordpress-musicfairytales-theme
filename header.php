@@ -83,7 +83,7 @@
 
           <?php for ($i = 1; $i <= 5; $i++) { ?>
             <?php $carouselPageId = get_theme_mod("frontpage_carousel_page_$i"); ?>
-            <?php $carouselPage = $carouselPageId ? get_post($carouselPageId) : null; ?>
+            <?php $carouselPage = $carouselPageId ? get_post(icl_object_id($carouselPageId)) : null; ?>
             <?php if ($carouselPage) { ?>
               <div class="carousel-item<?php echo $activePage ? ' active' : ''?>">
                 <div class="header-banner-carousel-image" <?php if(has_header_image()) { ?>style="background-image: url('<?php echo get_the_post_thumbnail_url($carouselPage) ?>');" <?php } ?>>
@@ -113,7 +113,13 @@
     <?php } ?>
 
     <?php if (is_front_page()) { ?>
-      <?php $shortDescriptionPage = get_post(get_theme_mod('frontpage_short_description_page')); ?>
+      <?php if (class_exists('SitePress') ) {
+          $shortDescriptionPageId = apply_filters( 'wpml_object_id', get_theme_mod('frontpage_short_description_page'), 'page' );
+          $shortDescriptionPage = get_post( $shortDescriptionPageId );
+      } 
+      else {
+          $shortDescriptionPage = get_post(get_theme_mod('frontpage_short_description_page') );
+      }?>
 
       <div id="front-page-short-description">
         <div class="container"> 
@@ -137,7 +143,7 @@
         <div class="container">
           <div class="row">
             <div class="col-sm">
-              <h2 class="text-center mt-4 pt-4">Suositut musiikkisadut verkkokaupassa
+              <h2 class="text-center mt-4 pt-4"><?php echo __("Popular in store", "musicfairytales") ?> </h2>
             </div>
           </div>
           <div class="row">
@@ -154,7 +160,7 @@
         <?php if (is_front_page()) { ?>
           <div class="row">
             <div class="col mt-4 mb-4">
-              <h2 class="mt-4 text-center"> Ajankohtaista </h2>
+              <h2 class="mt-4 text-center"> <?php echo __("Currently", "musicfairytales") ?> </h2>
             </div>
           </div>
         <?php } ?>
