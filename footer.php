@@ -20,8 +20,16 @@
   </div><!-- #content -->
   
   <?php if (is_front_page()) { ?>
-    <?php $frontlinePage1 = get_post(get_theme_mod('frontline_page_1')); ?>
-    <?php $frontlinePage2 = get_post(get_theme_mod('frontline_page_2')); ?>
+    <?php if ( class_exists('SitePress') ) {
+        $frontlinePage1Id = apply_filters( 'wpml_object_id', get_theme_mod('frontline_page_1'), 'page' );
+        $frontlinePage1 = get_post($frontlinePage1Id );
+        $frontlinePage2Id = apply_filters( 'wpml_object_id', get_theme_mod('frontline_page_2'), 'page' );
+        $frontlinePage2 = get_post( $frontlinePage2Id );
+      } 
+      else {
+        $frontlinePage1 = get_post( get_theme_mod('frontline_page_1'));
+        $frontlinePage2 = get_post( get_theme_mod('frontline_page_2'));
+      }?>
 
     <div id="frontline_pages">
       <div class="container"> 
@@ -73,7 +81,7 @@
             <div class="site-info">
                 &copy; <?php echo date('Y'); ?> <?php echo '<a href="'.home_url().'">'.get_bloginfo('name').'</a>'; ?>
                 <span class="sep"> | </span>
-                <a class="credits" href="https://www.metatavu.fi/" target="_blank" title="Metatavu" alt="Musicfairytales Theme">Teeman luonut Metatavu</a>
+                <a class="credits" href="https://www.metatavu.fi/" target="_blank" title="Metatavu" alt="Musicfairytales Theme"><?php echo __("Theme created by Metatavu", "musicfairytales") ?> </a>
             </div><!-- close .site-info -->
 		</div>
 	</footer><!-- #colophon -->
